@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        maven {
+            name = "forge"
+            url = "https://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = 'sponge'
+            url = 'https://repo.spongepowered.org/maven'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.liteloader'
+apply plugin: 'org.spongepowered.mixin'
+
+group = 'tomb'
+version = '1.0-SNAPSHOT'
+archivesBaseName = 'minimalmenu'
+
+minecraft {
+    version = project.mcVersion
+    mappings = project.mcpMappings
+    runDir = "run"
+    makeObfSourceJar = false
+}
+
+sourceSets {
+    main {
+        // Refmap declaration must match the refmap name specified in the json config
+        ext.refMap = "mixins.minimalmenu.refmap.json"
+    }
+}
+
+litemod {
+    json{
+        name = "minimalmenu"
+        mcversion = project.mcVersion
+        description = "Small client side mod to clean up Minecrafts UI"
+        mixinConfigs += "mixins.minimalmenu.json"
+    }
+}
+
+mixin {
+    defaultObfuscationEnv notch
+}
+
+jar {
+    from litemod.outputs
+}

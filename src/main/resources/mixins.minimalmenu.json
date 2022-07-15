@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.5.3",
+  "package": "tomb.minimalmenu.mixin",
+  "refmap": "mixins.minimalmenu.refmap.json",
+  "mixins": [
+    "GuiMainMenuMixin",
+    "GuiIngameMenuMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
