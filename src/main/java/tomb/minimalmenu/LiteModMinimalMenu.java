@@ -4,11 +4,13 @@ import com.mumfrey.liteloader.Configurable;
 import com.mumfrey.liteloader.LiteMod;
 import com.mumfrey.liteloader.modconfig.ConfigPanel;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
 import tomb.minimalmenu.config.Config;
 import tomb.minimalmenu.config.GuiConfig;
 import tomb.minimalmenu.screens.FolderScreen;
 
 import java.io.File;
+import java.util.List;
 
 public class LiteModMinimalMenu implements LiteMod, Configurable {
 
@@ -35,12 +37,21 @@ public class LiteModMinimalMenu implements LiteMod, Configurable {
     public void upgradeSettings(String version, File configPath, File oldConfigPath) {
     }
 
+    @Override
+    public Class<? extends ConfigPanel> getConfigPanelClass() {
+        return GuiConfig.class;
+    }
+
     public static void processButtonFolderClick(Minecraft client) {
         client.displayGuiScreen(new FolderScreen(client.currentScreen));
     }
 
-    @Override
-    public Class<? extends ConfigPanel> getConfigPanelClass() {
-        return GuiConfig.class;
+    public static GuiButton getButtonFromList(List<GuiButton> buttonList, int buttonID) {
+        for (GuiButton button : buttonList) {
+            if (button.id == buttonID) {
+                return button;
+            }
+        }
+        return null;
     }
 }

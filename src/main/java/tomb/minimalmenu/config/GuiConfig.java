@@ -25,13 +25,9 @@ public class GuiConfig extends AbstractConfigPanel { //Thanks Nessie!
                     control.checked = !control.checked;
                     try {
                         f.setBoolean(config, control.checked);
-                    } catch (IllegalAccessException ignored) {
-                        // noop
-                    }
+                    } catch (IllegalAccessException ignored) {}
                 }).checked = f.getBoolean(config);
-            } catch (IllegalAccessException ignored) {
-                // noop
-            }
+            } catch (IllegalAccessException ignored) {}
         }
     }
 

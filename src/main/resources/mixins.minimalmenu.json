@@ -5,7 +5,8 @@
   "refmap": "mixins.minimalmenu.refmap.json",
   "mixins": [
     "GuiMainMenuMixin",
-    "GuiIngameMenuMixin"
+    "GuiIngameMenuMixin",
+    "GuiOptionsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

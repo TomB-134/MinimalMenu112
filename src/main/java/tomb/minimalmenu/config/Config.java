@@ -9,7 +9,13 @@ import com.mumfrey.liteloader.modconfig.ExposableOptions;
 @ExposableOptions(strategy = ConfigStrategy.Unversioned, filename = "minimalmenu")
 public class Config implements Exposable {
     //Main Menu Options
+    @Expose public boolean removeRealms;
+    @Expose public boolean removeCopyright;
+    @Expose public boolean removeLanguageButton;
+    @Expose public boolean removeSplashText;
+    @Expose public boolean removeJavaEdition;
     @Expose public boolean dirtBackground;
+    @Expose public boolean removePanoramaGradient;
     @Expose public boolean addFolderButtonMainMenu;
 
     //Pause Screen Options

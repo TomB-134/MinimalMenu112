@@ -53,7 +53,6 @@ public class FolderScreen extends GuiScreen {
 
     public void drawScreen(int p_drawScreen_1_, int p_drawScreen_2_, float p_drawScreen_3_) {
         this.drawDefaultBackground();
-        this.drawCenteredString(this.fontRenderer, I18n.format("Folders"), this.width / 2, 40, 16777215);
         super.drawScreen(p_drawScreen_1_, p_drawScreen_2_, p_drawScreen_3_);
     }
 }

@@ -25,7 +25,7 @@ apply plugin: 'net.minecraftforge.gradle.liteloader'
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'tomb'
-version = '1.0-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 archivesBaseName = 'minimalmenu'
 
 minecraft {
