@@ -6,3 +6,11 @@ This is currently a work in progress mod. I'm slowly adding features as I feel n
 ## Current Features
 * Dirt menu background for title screen
 * Add button to directly open the .minecraft folder or subfolders
+
+## Next Release (0.0.2)
+* Remove realms
+* Remove copyright text
+* Remove Language button
+* Remove splash text
+* Remove Java edition logo
+* Remove panorama gradient
