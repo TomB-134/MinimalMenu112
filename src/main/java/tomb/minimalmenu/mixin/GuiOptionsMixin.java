@@ -13,7 +13,7 @@ import tomb.minimalmenu.LiteModMinimalMenu;
 public class GuiOptionsMixin extends GuiScreen {
     @Inject(method = "initGui", at = @At("TAIL"))
     public void initGui(CallbackInfo info) { //Remove realms notification button and resize FOV slider
-        if (LiteModMinimalMenu.config.removeRealms) {
+        if (LiteModMinimalMenu.config.removeRealms && this.mc.world == null) {
             GuiButton realmsButton = LiteModMinimalMenu.getButtonFromList(this.buttonList, 37);
             assert realmsButton != null;
             realmsButton.visible = false;
